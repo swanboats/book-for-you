@@ -1,37 +1,119 @@
-/* ページ全体の基本スタイル */
+/* 背景画像設定 */
 body {
-  font-family: 'Yu Gothic', sans-serif; /* フォントを游ゴシック（なければsans-serif）に設定 */
-  background-color: #fdfbf7; /* ページ全体の背景色（淡いベージュ） */
-  color: #333; /* 文字色を濃いグレーに設定 */
-  text-align: center; /* テキストを中央揃えにする */
-  padding: 20px; /* ページの余白（上下左右20px） */
+  background-image: url('images/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
-/* ページのメインタイトル（h1） */
-h1 {
-  color: #b56576; /* タイトル文字の色をくすんだピンクに設定 */
+/* 全体コンテナ */
+.container {
+  max-width: 480px;       /* スマホに最適化 */
+  margin: 0 auto;
+  padding: 10px;
 }
 
-/* ボタンの基本デザイン */
-button {
-  background-color: #f8e1e7; /* ボタン背景色（淡いピンク） */
-  border: none; /* 枠線をなくす */
-  padding: 10px 20px; /* ボタン内側の余白（上下10px・左右20px） */
-  border-radius: 8px; /* 角を丸くする */
-  cursor: pointer; /* マウスカーソルを「指マーク」に変更 */
+/* ページ切替用 */
+.page {
+  display: block;
 }
-
-/* ボタンにマウスを乗せたときのデザイン */
-button:hover {
-  background-color: #f1c6d3; /* 少し濃いピンクに変化してクリック感を出す */
-}
-
-/* 非表示にするためのクラス */
 .hidden {
-  display: none; /* このクラスが付与された要素は画面に表示されない */
+  display: none;
 }
 
-/* 各画面（TOP/質問/結果）共通のスタイル */
-.screen {
-  margin-top: 50px; /* 上方向に余白を追加し、画面中央寄りに配置 */
+/* 半透明の背景ボックス */
+.page > div, #quiz-page #question-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* TOPページ */
+#top-page h1 {
+  font-size: 28px;
+  text-align: center;
+}
+#top-page p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.start-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f5e8d0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.start-btn:hover {
+  background-color: #f0d9b5;
+}
+
+/* 質問ページ */
+#question-text {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.choice-btn {
+  display: block;       /* 縦に並べる */
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #f5e8d0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.choice-btn:hover {
+  background-color: #f0d9b5;
+}
+
+/* 結果ページ */
+#result-page h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+#result-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+#result-link {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  background-color: #f5a623;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+#result-link:hover {
+  background-color: #e5941c;
+}
+
+.restart-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f5e8d0;
+  cursor: pointer;
+}
+.restart-btn:hover {
+  background-color: #f0d9b5;
 }

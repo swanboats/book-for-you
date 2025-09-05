@@ -1,36 +1,37 @@
-<!DOCTYPE html> <!-- HTML5文書であることを宣言 -->
-<html lang="ja"> <!-- ページの言語を日本語に設定 -->
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8"> <!-- 文字コードをUTF-8に指定（日本語を正しく表示するため） -->
-  <title>Book for you</title> <!-- ブラウザのタブに表示されるタイトル -->
-  <link rel="stylesheet" href="style.css"> <!-- 外部CSSファイルを読み込み、デザインを適用 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book for you</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- TOP画面（アプリの最初に表示される画面） -->
-  <div id="top" class="screen">
-    <h1>Book for you</h1> <!-- アプリのタイトル -->
-    <p>
-      大人の女性のための書籍提案アプリです。<br>
-      今のあなたにぴったりな本を見つけてみませんか？
-    </p>
-    <button onclick="startQuiz()">見つけてみる</button> 
-    <!-- ボタンを押すと startQuiz() 関数が実行され、質問画面に進む -->
+  <div class="container">
+    <!-- TOPページ -->
+    <div id="top-page" class="page">
+      <h1>Book for you</h1>
+      <p>大人の女性のための書籍提案アプリです。今のあなたにぴったりな本を見つけてみませんか？</p>
+      <button class="start-btn" onclick="startQuiz()">見つけてみる</button>
+    </div>
+
+    <!-- 質問ページ -->
+    <div id="quiz-page" class="page hidden">
+      <div id="question-container">
+        <p id="question-text"></p>
+        <div id="choices-container"></div>
+      </div>
+    </div>
+
+    <!-- 結果ページ -->
+    <div id="result-page" class="page hidden">
+      <h2>こちらの本はいかがでしょう？</h2>
+      <p id="result-title"></p>
+      <a id="result-link" href="#" target="_blank">Amazonで購入する</a>
+      <button class="restart-btn" onclick="restartQuiz()">もう一度診断する</button>
+    </div>
   </div>
 
-  <!-- 質問表示エリア（ボタンを押した後に表示される） -->
-  <div id="quiz" class="screen hidden">
-    <p id="question"></p> <!-- 質問文を表示する部分 -->
-    <div id="options"></div> <!-- 質問に対する選択肢ボタンを配置する部分 -->
-  </div>
-
-  <!-- 結果表示エリア（全ての質問に答えた後に表示される） -->
-  <div id="result" class="screen hidden">
-    <h2>こちらの本はいかがでしょう？</h2> <!-- 結果見出し -->
-    <p id="book-title"></p> <!-- 提案する本のタイトルを表示 -->
-    <a id="amazon-link" href="#" target="_blank">Amazonで見る</a> 
-    <!-- 提案本のAmazonページへのリンク（別タブで開く） -->
-  </div>
-
-  <script src="script.js"></script> <!-- アプリの動作を制御するJavaScriptを読み込む -->
+  <script src="script.js"></script>
 </body>
 </html>
